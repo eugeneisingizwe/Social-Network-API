@@ -8,10 +8,6 @@ const reactionSchema = new Schema(
       default: () => new Types.ObjectId(),
     },
 
-    inPerson: {
-      type: Boolean,
-      default: true,
-    },
     reactionBody: {
       type: String,
       require: true,
@@ -21,7 +17,7 @@ const reactionSchema = new Schema(
     },
 
     username: {
-      type: Date,
+      type: String,
       require: true,
     },
     createAt: {
@@ -39,6 +35,6 @@ const reactionSchema = new Schema(
   }
 );
 
-const Reaction = model('reaction', reactionSchema);
 
-module.exports = Reaction;
+
+module.exports = reactionSchema;

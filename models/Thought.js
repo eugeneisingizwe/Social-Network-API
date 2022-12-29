@@ -5,17 +5,13 @@ const reactionSchema = require('./Reaction');
 // Schema to create though model
 const thoughtSchema = new Schema(
   {
-    thoughText: {
+    thoughtText: {
       type: String,
       required: true,
+      minlenght: 1,
       max_length: 50,
     },
-    last: {
-      type: String,
-      required: true,
-      minlegth: 1,
-      max_length: 280,
-    },
+ 
     createAt: {
       type: Date,
       default: Date.now,
@@ -39,7 +35,7 @@ const thoughtSchema = new Schema(
 );
 
 //Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
-thoughtSchema.virtual("reactions").get(function () {
+thoughtSchema.virtual("reactionCount").get(function () {
     return this.reactions.length;
 })
 

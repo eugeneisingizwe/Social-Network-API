@@ -14,7 +14,7 @@ const thoughController = {
         }).then((user) =>
             !user
             ? res.status(404).json({
-                message: "Though created, no idea found with the user!",
+                message: "Though created, no id found with the user!",
             })
             : res.json("Though created!")
         )
@@ -34,28 +34,28 @@ const thoughController = {
 
 
   // Get a though by its id
-  getOneThough(req, res) {
-    Course.findOne({ _id: req.params.thoughId })
+  getOneThought(req, res) {
+    Thought.findOne({ _id: req.params.thoughId })
       .select('-__v')
-      .then((though) =>
-        !though
+      .then((thought) =>
+        !thought
           ? res.status(404).json({ message: 'No though with that ID' })
-          : res.json(though)
+          : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
 
   // Update a though bt id
-  updateOneThough(req, res) {
+  updateOneThought(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.courseId },
       { $set: req.body },
       { runValidators: true, new: true }
     )
-      .then((course) =>
-        !course
+      .then((thought) =>
+        !thought
           ? res.status(404).json({ message: 'No though with this id!' })
-          : res.json(though)
+          : res.json(thought)
       )
       .catch((err) => {
         console.log(err)
@@ -65,7 +65,7 @@ const thoughController = {
   },
 
   // Delete a though
-  deleteThough(req, res) {
+  deleteThought(req, res) {
     Thought.findOneAndDelete({ _id: req.params.thoughId })
       .then((though) =>
         !though

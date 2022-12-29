@@ -9,12 +9,10 @@ const userSchema = new Schema(
       required: true,
       trim: true
     },
-    emial: {
+    email: {
       type: String,
       required: true,
       unique: true,
-      maxlength: 50,
-      minlength: 4,
       match: [
         /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
         "Please provide a valid email"
@@ -47,8 +45,8 @@ const userSchema = new Schema(
 
 //Create a virtual called friendCount that retrieves the length of the user's friends array field on query.
 
-userSchema.virtual("friends").get(function() {
-    return this.freinds.length
+userSchema.virtual("friendCount").get(function() {
+    return this.friends.length
 })
 
 const User = model("User", userSchema)

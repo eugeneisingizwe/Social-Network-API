@@ -1,5 +1,5 @@
 
-const { Uuser } = require('../models');
+const { User } = require('../models');
 
 // // TODO: Create an aggregate function to get the number of students overall
 // const headCount = async () =>
@@ -29,17 +29,9 @@ const { Uuser } = require('../models');
 //   ]);
 
 const userController = {
-
- // Create users 
- createUser(req, res){
-    User.create(req.body)
-    .then((dbUserData) => res.json(dbUserData))
-    .catch((err) => res.status(500).json(err)); 
- },
-
   // Get all users
   getUsers(req, res) {
-    User.find()
+    User.find({})
       .then((users) => res.json(users))
       .catch((err) => res.status(500).josn(err));
   },
@@ -61,6 +53,14 @@ const userController = {
         return res.status(500).json(err);
       });
   },
+
+ // Create users 
+ createUser(req, res){
+    User.create(req.body)
+    .then((user) => res.json(user))
+    .catch((err) => res.status(500).json(err)); 
+ },
+
 
 // update a user by id
 updatedUserbyId(req, res) {
@@ -119,7 +119,7 @@ updatedUserbyId(req, res) {
 //delete current friend 
 
 deleteUserFreind(req, res) {
-  Use.findOneAndUpdate(
+  User.findOneAndUpdate(
     { _id: req.params.userId},
     {$pull: {friends: req.params.friendId}},
     { runValidators: true, new: true}
