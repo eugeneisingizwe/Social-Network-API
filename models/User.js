@@ -25,7 +25,7 @@ const userSchema = new Schema(
         ref: "Thought",
     }
     ], 
-      freinds: [
+      friends: [
         {
             type: Schema.Types.ObjectId,
             ref: "User",
@@ -39,7 +39,7 @@ const userSchema = new Schema(
     virtuals: true,
       getters: true,
     },
-    id: false,
+    // id: false,
   }
 );
 

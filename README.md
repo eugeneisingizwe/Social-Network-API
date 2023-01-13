@@ -56,25 +56,14 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 The following animations show examples of the application's API routes being tested in Insomnia.
 
-The following animation shows GET routes to return all users and all thoughts being tested in Insomnia:
+https://drive.google.com/file/d/1KP1wF259RA6AVmRL5YNoSGYvvBAwN7lP/view
 
-![Demo of GET routes to return all users and all thoughts being tested in Insomnia.](./image/18-nosql-homework-demo-01.gif)
+![Demo of GET routes to return all users and all thoughts being tested in Insomnia.](./image/Screenshot%201.jpg)
 
 The following animation shows GET routes to return a single user and a single thought being tested in Insomnia:
 
-![Demo that shows GET routes to return a single user and a single thought being tested in Insomnia.](./image/18-nosql-homework-demo-02.gif)
+![Demo that shows GET routes to return a single user and a single thought being tested in Insomnia.](./image/Screenshot%202.jpg)
 
-The following animation shows the POST, PUT, and DELETE routes for users being tested in Insomnia:
-
-![Demo that shows the POST, PUT, and DELETE routes for users being tested in Insomnia.](./image/18-nosql-homework-demo-03.gif)
-
-In addition to this, your walkthrough video should show the POST, PUT, and DELETE routes for thoughts being tested in Insomnia.
-
-The following animation shows the POST and DELETE routes for a user’s friend list being tested in Insomnia:
-
-![Demo that shows the POST and DELETE routes for a user’s friend list being tested in Insomnia.](./image/18-nosql-homework-demo-04.gif)
-
-In addition to this, your walkthrough video should show the POST and DELETE routes for reactions to thoughts being tested in Insomnia.
 
 ---
 © 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

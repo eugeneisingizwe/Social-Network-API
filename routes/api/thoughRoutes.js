@@ -11,7 +11,7 @@ const {
 } = require('../../controllers/thoughController');
 
 // /api/users
-router.route('/').get(getThoughts);
+router.route('/').get(getThoughts).post(createThought)
 
 // /api/though/:thoughId
 router
@@ -22,10 +22,10 @@ router
 
   //post route /userId/freinds/friendId
 
-  router.route("./thought").post(createThought),
+  // router.route("./thought").post(createThought),
 
-  router.route("./:thoughtId/reactions").post(addReaction)
+  router.route("/:thoughtId/reactions").post(addReaction)
 
-  router.route("./thoughtID/reactions/:reactionId").delete(deleteReaction);
+  router.route("/:thoughtId/reactions/:reactionId").delete(deleteReaction);
 
 module.exports = router;

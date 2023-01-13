@@ -31,9 +31,10 @@ const { User } = require('../models');
 const userController = {
   // Get all users
   getUsers(req, res) {
+    console.log("getUsers");
     User.find({})
       .then((users) => res.json(users))
-      .catch((err) => res.status(500).josn(err));
+      .catch((err) => res.status(500).json(err));
   },
 
   // Get a single user
@@ -84,7 +85,7 @@ updatedUserbyId(req, res) {
 
   // Delete a user by id
   deleteUserById(req, res) {
-    User.findOneAndRemove({ _id: req.params.usertId })
+    User.findOneAndRemove({ _id: req.params.userId })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No such user exists' })
